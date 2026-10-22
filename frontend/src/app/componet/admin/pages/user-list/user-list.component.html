@@ -1,0 +1,23 @@
+<div class="table-responsive">
+  <a class="btnPrimary" routerLink="/employee-details">Add Employee</a>
+  <p *ngIf="isLoading" role="status">Loading employees...</p>
+  <p *ngIf="errorMessage" role="alert">{{ errorMessage }}</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr><th>Employee ID</th><th>Employee Name</th><th>Email</th><th>Salary</th><th>Created Date</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employeeList">
+        <td>{{ item.employeeId }}</td><td>{{ item.name }}</td><td>{{ item.email }}</td>
+        <td>{{ item.salary | number:'1.2-2' }}</td><td>{{ item.createdAt | date:'mediumDate' }}</td>
+        <td>
+          <a [routerLink]="['/employee-details', item.employeeId]">Edit</a>
+          <button type="button" (click)="deleteEmployee(item)" [disabled]="deletingId !== null">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="!isLoading && !errorMessage && employeeList.length === 0">
+        <td colspan="6" class="text-center">No employees found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

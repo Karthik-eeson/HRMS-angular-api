@@ -1,0 +1,11 @@
+<p *ngIf="loading">Loading salaries...</p>
+<p *ngIf="errorMessage" role="alert">{{ errorMessage }}</p>
+<table class="table table-bordered" *ngIf="!loading && !errorMessage">
+  <thead><tr><th>Employee ID</th><th>Name</th><th>Salary</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.employeeId }}</td><td>{{ employee.name }}</td><td>{{ employee.salary | number:'1.2-2' }}</td>
+    </tr>
+    <tr *ngIf="employees.length === 0"><td colspan="3">No employees found.</td></tr>
+  </tbody>
+</table>

@@ -1,0 +1,27 @@
+<header class="header" [class.shifted]="isCollapsed">
+    <div class="header-content">
+        <div class="header-left">
+            <button class="menu-btn" (click)="toggleSidebarMenu()">☰</button>
+            <span class="header-date">{{ currentDate | date:'EEEE, MMMM d, yyyy'}}</span>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <p class="user-name">Hi, <span class="user-highlight">{{ email }}</span></p>
+                <div class="user-info-drpdown">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa-solid fa-lock"></i>
+                                <span>Change Password</span>
+                            </a>
+                        </li>
+                        <li>
+                            <button type="button" (click)="logout()">Log Out</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p *ngIf="logoutError" role="alert">{{ logoutError }}</p>
+        </div>
+    </div>
+</header>

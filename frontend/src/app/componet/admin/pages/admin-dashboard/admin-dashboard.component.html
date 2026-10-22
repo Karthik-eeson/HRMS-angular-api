@@ -1,0 +1,10 @@
+<section class="custom-card">
+  <h2>Dashboard</h2>
+  <p *ngIf="!summary && !errorMessage">Loading...</p>
+  <p *ngIf="errorMessage" role="alert">{{ errorMessage }}</p>
+  <div *ngIf="summary">
+    <p>Total Employees: {{ summary.employeeCount }}</p>
+    <p>Total Salary: {{ summary.totalSalary | number:'1.2-2' }}</p>
+  </div>
+  <a routerLink="/employee-list">Manage Employees</a>
+</section>

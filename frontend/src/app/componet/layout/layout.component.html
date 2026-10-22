@@ -1,0 +1,10 @@
+<app-sidebar [isCollapsed]="isSidebarCollapsed"></app-sidebar>
+<div class="main-wrapper" [ngClass]="{'sidebar-collapsed': isSidebarCollapsed}">
+    <div class="header-wrapper">
+        <app-header [isCollapsed]="isSidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-header>
+    </div>
+    <div class="content-area">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,138 @@
+.side-bar {
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+
+    .logo-section {
+        text-align: center;
+        padding: 18px 15px 15px;
+        border-bottom: 1px solid #f0f0f0;
+
+        .logo-img {
+            width: 130px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .logo-img-small {
+            width: 35px;
+            transition: width 0.3s ease-in-out;
+        }
+    }
+
+    .nav-menu {
+        flex: 1;
+        padding: 10px 0;
+        overflow-y: auto;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .nav-item {
+                display: flex;
+                align-items: center;
+                padding: 12px 20px;
+                margin: 2px 10px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                color: #555;
+                font-size: 15px;
+                font-weight: 500;
+                gap: 12px;
+
+                i {
+                    font-size: 16px;
+                    width: 20px;
+                    text-align: center;
+                    flex-shrink: 0;
+                }
+
+                .nav-text {
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                &:hover {
+                    background-color: #f0faff;
+                    color: #21beff;
+                }
+
+                &.active {
+                    background-color: #e3f5fc;
+                    color: #21beff;
+                    font-weight: 600;
+
+                    i {
+                        color: #21beff;
+                    }
+                }
+            }
+        }
+    }
+
+    // Collapsed state
+    &.collapsed {
+        width: 70px;
+
+        .logo-section {
+            padding: 18px 5px 15px;
+        }
+
+        .nav-menu {
+            .nav-item {
+                justify-content: center;
+                padding: 12px 0;
+                margin: 2px 5px;
+
+                .nav-text {
+                    display: none;
+                }
+
+                i {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1280px) and (max-width: 1539px) {
+    .side-bar {
+        width: 200px;
+
+        .logo-section .logo-img {
+            width: 110px;
+        }
+
+        .nav-menu ul .nav-item {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+
+        &.collapsed {
+            width: 65px;
+        }
+    }
+}
+
+@media (min-width: 1540px) and (max-width: 1919px) {
+    .side-bar {
+        width: 250px;
+
+        .logo-section .logo-img {
+            width: 130px;
+        }
+    }
+}

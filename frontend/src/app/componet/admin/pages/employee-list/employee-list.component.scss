@@ -1,0 +1,21 @@
+.emp-list{
+    .tab-menu{
+        .user-salary{
+            padding: 5px 45px;
+            background: rgb(165, 163, 163);
+            font-size: 17px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+        }
+        .tab-active{
+            background: linear-gradient(to bottom, #21beff 0%, #44849f 100%);;
+        }
+    }
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+
+

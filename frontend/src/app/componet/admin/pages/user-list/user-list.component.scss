@@ -1,0 +1,22 @@
+.table-responsive {
+    table {
+        width: 100%;
+        border: 1px solid #ccc;
+        overflow-x: scroll;
+        thead th {
+            vertical-align: middle;
+            text-align: center;
+            background:#ccc;
+            padding: 10px;
+            font-weight: 600;
+            color: #fff;
+            
+        }
+        td {
+            vertical-align: middle;
+            padding: 10px;
+                white-space: nowrap;
+        }
+    }
+}
+

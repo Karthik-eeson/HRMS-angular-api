@@ -1,0 +1,13 @@
+<div>
+    <app-admin-breadcrumbs [bradcumsName]="pageTitle" [isHide]="isShow"></app-admin-breadcrumbs>
+</div>
+<div class="emp-list custom-card">
+    <div class="d-flex tab-menu" style="gap: 5px;">
+        <div class="user-salary" (click)="clickTab(0)" [class.tab-active]="seleteTab === 0">User List</div>
+        <div class="user-salary" (click)="clickTab(1)" [class.tab-active]="seleteTab === 1">Temp User List</div>
+        <div class="user-salary" (click)="clickTab(2)" [class.tab-active]="seleteTab === 2">Salary List</div>
+    </div>
+    <div *ngIf="seleteTab === 0"><app-user-list></app-user-list></div>
+    <div *ngIf="seleteTab === 1"><app-tempuserlist></app-tempuserlist></div>
+    <div *ngIf="seleteTab === 2"><app-salary></app-salary></div>
+</div>

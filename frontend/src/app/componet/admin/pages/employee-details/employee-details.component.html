@@ -1,0 +1,23 @@
+<section class="custom-card">
+  <h2>{{ employeeId ? 'Edit Employee' : 'Add Employee' }}</h2>
+  <p *ngIf="isLoading" role="status">Loading...</p>
+  <p *ngIf="errorMessage" role="alert">{{ errorMessage }}</p>
+  <form #employeeForm="ngForm" (ngSubmit)="save(employeeForm)">
+    <fieldset [disabled]="isLoading || isSaving || loadFailed">
+      <div class="mb-3">
+        <label for="name">Employee Name</label>
+        <input id="name" class="form-control" name="name" [(ngModel)]="employee.name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input id="email" class="form-control" type="email" name="email" [(ngModel)]="employee.email" required email>
+      </div>
+      <div class="mb-3">
+        <label for="salary">Salary</label>
+        <input id="salary" class="form-control" type="number" name="salary" [(ngModel)]="employee.salary" min="0" step="0.01" required>
+      </div>
+      <button class="btnPrimary" type="submit">{{ isSaving ? 'Saving...' : 'Save' }}</button>
+    </fieldset>
+    <a routerLink="/employee-list">Back to Employee List</a>
+  </form>
+</section>

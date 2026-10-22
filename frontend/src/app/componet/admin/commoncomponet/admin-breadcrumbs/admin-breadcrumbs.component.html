@@ -1,0 +1,15 @@
+<div class="breadcrumbs pb-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <ul class="centermiddledown breadcrumbs">
+          <div class="bgground">
+            <li routerLink="/admin-dashboard" style="cursor: pointer;"><a class="fas fa-home" style="color: #21beff;"> </a></li>
+            <li>{{ bradcumsName }}</li>
+          </div>
+        </ul>
+      </div>
+      <div *ngIf="isHide">
+        <button  class="btnBack" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,38 @@
+<div class="side-bar" [class.collapsed]="isCollapsed">
+    <div class="logo-section">
+        <img *ngIf="!isCollapsed" src="assets/images/Afablez.png" alt="Afablez Logo" class="logo-img">
+        <img *ngIf="isCollapsed" src="assets/images/favicon.ico" alt="Logo" class="logo-img-small">
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li class="nav-item active" routerLink="admin-dashboard" routerLinkActive="active">
+                <i class="fas fa-chart-line"></i>
+                <span class="nav-text">Dashboard</span>
+            </li>
+            <li class="nav-item" routerLink="employee-list" routerLinkActive="active">
+                <i class="fas fa-user"></i>
+                <span class="nav-text">Employee Profile</span>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-check-circle"></i>
+                <span class="nav-text">LRP Approvals</span>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-file-alt"></i>
+                <span class="nav-text">Reports</span>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span class="nav-text">Payslip</span>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-file-contract"></i>
+                <span class="nav-text">IT Declaration</span>
+            </li>
+            <li class="nav-item">
+                <i class="fas fa-question-circle"></i>
+                <span class="nav-text">Help</span>
+            </li>
+        </ul>
+    </nav>
+</div>

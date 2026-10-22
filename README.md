@@ -1,27 +1,28 @@
-# Lafablez
+# Afablez local development
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+See [LEARNING-GUIDE.md](LEARNING-GUIDE.md) for simple explanations, account creation, SQL queries and API test commands.
 
-## Development server
+Start the API in one terminal:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```powershell
+cd G:\afablez-demo\afablex-demo-api
+dotnet run --project .\demoApi\demoApi.csproj --launch-profile http
+```
 
-## Code scaffolding
+Start Angular in another terminal:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```powershell
+cd G:\afablez-demo\frontend
+npm start -- --open
+```
 
-## Build
+Open http://localhost:4200. Angular proxies `/api` to http://localhost:5207.
+Swagger is available at http://localhost:5207/swagger.
+The local HTTP profile avoids requiring a development TLS certificate.
+Production still requires HTTPS and a same-origin reverse proxy for `/api`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The API uses SQL Server LocalDB `(localdb)\MSSQLLocalDB`, database `afablez-demo-db`, with Windows authentication.
+Login requires an existing Users record with a BCrypt password hash in that database.
+No users or passwords are seeded automatically. Sessions use an HttpOnly, SameSite=Strict cookie;
+employee APIs require authentication. All authenticated users currently have employee CRUD access;
+role-specific authorization is not implemented.

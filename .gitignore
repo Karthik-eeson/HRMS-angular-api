@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Backend build output and local IDE state
+**/bin/
+**/obj/
+**/.vs/
+*.csproj.user

@@ -1,0 +1,110 @@
+.header {
+    width: 100%;
+    transition: all 0.3s ease;
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .menu-btn {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.2s;
+
+            &:hover {
+                color: #21beff;
+            }
+        }
+
+        .header-date {
+            font-size: 15px;
+            color: #555;
+            font-weight: 500;
+        }
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .user-info {
+        position: relative;
+        display: inline-block;
+
+        .user-name {
+            margin: 0;
+            font-size: 15px;
+            color: #333;
+            cursor: pointer;
+            font-weight: 500;
+
+            .user-highlight {
+                color: #21beff;
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+
+        &:hover .user-info-drpdown {
+            display: block;
+        }
+    }
+
+    .user-info-drpdown {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        padding: 8px 0;
+        right: 0;
+        top: 100%;
+        min-width: 200px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        z-index: 300;
+        border: 1px solid #f0f0f0;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 16px;
+                    font-size: 14px;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background-color: #f5f9ff;
+                        color: #21beff;
+                    }
+
+                    i {
+                        width: 16px;
+                        text-align: center;
+                        color: #888;
+                    }
+                }
+            }
+        }
+    }
+}
