@@ -46,3 +46,12 @@ Thumbs.db
 **/obj/
 **/.vs/
 *.csproj.user
+
+# Local secrets and full database backups
+.env
+.env.*
+!.env.example
+*.bak
+*.mdf
+*.ldf
+*.pfx
