@@ -6,7 +6,7 @@ Start the API in one terminal:
 
 ```powershell
 cd G:\afablez-demo\afablex-demo-api
-dotnet run --project .\demoApi\demoApi.csproj --launch-profile http
+dotnet run --launch-profile http
 ```
 
 Start Angular in another terminal:

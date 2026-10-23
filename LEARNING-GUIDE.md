@@ -18,7 +18,7 @@ Open a terminal:
 
 ~~~powershell
 cd G:\afablez-demo
-dotnet run --project tools/database-setup/DatabaseSetup.csproj -- afablex-demo-api/demoApi/appsettings.json --create-user
+dotnet run --project tools/database-setup/DatabaseSetup.csproj -- afablex-demo-api/appsettings.json --create-user
 ~~~
 
 Enter your email, password, and password confirmation when prompted.
@@ -29,7 +29,7 @@ This is a local development tool; it is not a public registration API.
 ## 2. Start the backend (terminal 1)
 
 ~~~powershell
-cd G:\afablez-demo\afablex-demo-api\demoApi
+cd G:\afablez-demo\afablex-demo-api
 dotnet run --launch-profile http
 ~~~
 
@@ -96,7 +96,7 @@ Backend must be running before the API test:
 
 ~~~powershell
 cd G:\afablez-demo
-dotnet run --project tools/database-setup/DatabaseSetup.csproj -- afablex-demo-api/demoApi/appsettings.json --test-api
+dotnet run --project tools/database-setup/DatabaseSetup.csproj -- afablex-demo-api/appsettings.json --test-api
 ~~~
 
 This creates temporary test records, checks login and employee CRUD, and removes those records.

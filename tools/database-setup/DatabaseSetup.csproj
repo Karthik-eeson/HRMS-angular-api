@@ -6,6 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../../afablex-demo-api/demoApi/demoApi.csproj" />
+    <ProjectReference Include="../../afablex-demo-api/demoApi.csproj" />
   </ItemGroup>
 </Project>
