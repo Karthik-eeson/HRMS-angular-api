@@ -13,6 +13,7 @@ import { finalize } from 'rxjs';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  showPasswordHelp = false;
   isLoading = false;
   errorMessage = '';
   constructor(private auth: AuthService, private router: Router) {}
